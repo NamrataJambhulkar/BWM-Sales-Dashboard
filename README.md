@@ -1,51 +1,80 @@
-### 🚗 BMW Sales Dashboard (Power BI Project)
-This repository contains a complete data analytics project focused on BMW car sales, including sales metrics, country-wise trends, car images, and flag visualizations, all presented in an interactive Power BI dashboard.
+# 🚗 BMW Sales Dashboard – Power BI Project
 
-## 📊 Overview
-The BMW Sales Dashboard is designed to provide insights into:
+An interactive data analytics project that provides detailed insights into **BMW car sales**, combining **Power BI**, **SQL**, and **image embedding** (car models and country flags). The dashboard is designed to help stakeholders understand performance metrics across regions and car models.
 
-Sales trends by model and country
-
-Profit and revenue analysis
-
-Model performance across regions
-
-Visual representation with car images and country flags
-
-This project is ideal for data analysts looking to improve their Power BI, SQL, and data visualization skills using real-world automotive data.
+---
 
 ## 📁 Project Structure
 
-CSV Files/
-├── BMW_Sales_Data.csv              # Sales records of BMW models across countries
-├── Car Images.csv                  # URLs of car model images
-├── Countries with Flags URL.csv    # URLs of country flags
-├── cars_db.sql                     # SQL schema and data join logic
-├── BWM Sales Dashboard.pbix        # Final Power BI dashboard file
-└── README.md                       # Project documentation
+BMW_Sales_Dashboard/
+├── BMW_Sales_Data.csv           # Sales data of BMW cars across countries
+├── Car Images.csv               # Model-wise car image URLs
+├── Countries with Flags URL.csv # Country-wise flag image URLs
+├── cars_db.sql                  # SQL script for data merging
+├── BWM Sales Dashboard.pbix     # Final Power BI Dashboard
+└── README.md                    # Project documentation
 
-## 🧰 Tools & Technologies
 
-Power BI – Data visualization and dashboard creation
-SQL – Data integration and join queries
-Excel/CSV – Raw data management
-DAX – Custom metrics and KPIs in Power BI
+---
 
-## 🔗 Data Sources
+## 🧰 Tools & Technologies Used
 
-BMW_Sales_Data.csv: Contains sales, revenue, cost, and profit metrics for BMW car models.
-Car Images.csv: Maps each car model to its image URL.
-Countries with Flags URL.csv: Maps each country to its flag URL.
-cars_db.sql: SQL script to join data for enriched reporting.
+- **Power BI Desktop** – Data modeling & visualization
+- **SQL (MySQL)** – Data integration using joins
+- **CSV / Excel** – Raw and supporting data storage
+- **DAX** – KPIs and calculated measures
+- **Image URLs** – For embedding car images and country flags
 
-## 📌 Key Features
+---
 
-Model-wise and country-wise sales breakdown
-Interactive visuals with dynamic filters
-Embedded car and flag images using Power BI's web image capability
-KPIs for revenue, cost, and profit
-Clean and professional UI
+## 🗃️ Data Description
 
-## Author
+### ✅ BMW_Sales_Data.csv
+Main dataset containing:
+- `Model`
+- `Country`
+- `Units Sold`
+- `Revenue`
+- `Cost`
+- `Profit`
+
+### ✅ Car Images.csv
+Supporting dataset with:
+- `Model`
+- `Image URL` (used to show car visuals in dashboard)
+
+### ✅ Countries with Flags URL.csv
+Supporting dataset with:
+- `Country`
+- `Flag Image URL` (used to show flag next to country in dashboard)
+
+### ✅ cars_db.sql
+SQL script used to join the data before feeding into Power BI.
+
+```sql
+SELECT 
+    s.*, 
+    ci.img AS Car_Image, 
+    f.Flag AS Country_Flag
+FROM sales_data s
+LEFT JOIN car_images ci ON s.Model = ci.Model
+LEFT JOIN flags f ON s.Country = f.Country;
+
+```
+
+## 📊 Dashboard Features
+📌 Country-wise Sales Overview with flag visuals
+
+🚘 Model-wise Sales Breakdown with car images
+
+💰 KPIs: Revenue, Cost, Profit
+
+📈 Trend Analysis over sales and profit
+
+📍 Filters/Slicers for dynamic analysis by Country or Model
+
+🌍 Clean, responsive visuals for executive-level reporting
+
+### Author
 
 Namrata Jambhulkar
