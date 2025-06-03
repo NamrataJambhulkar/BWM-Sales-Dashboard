@@ -4,16 +4,17 @@ An interactive data analytics project that provides detailed insights into **BMW
 
 ---
 
-## 📁 Project Structure
+## 📂 Data Sources
 
-BMW_Sales_Dashboard/
-├── BMW_Sales_Data.csv           # Sales data of BMW cars across countries
-├── Car Images.csv               # Model-wise car image URLs
-├── Countries with Flags URL.csv # Country-wise flag image URLs
-├── cars_db.sql                  # SQL script for data merging
-├── BWM Sales Dashboard.pbix     # Final Power BI Dashboard
-└── README.md                    # Project documentation
+BMW_Sales_Data.csv — Sales performance of BMW cars (units sold, revenue, cost, profit)
 
+Car Images.csv — URLs for car model images
+
+Countries with Flags URL.csv — URLs for country flags
+
+cars_db.sql — SQL script to merge sales, car images, and flag data
+
+BWM Sales Dashboard.pbix — Power BI file for final interactive dashboard
 
 ---
 
