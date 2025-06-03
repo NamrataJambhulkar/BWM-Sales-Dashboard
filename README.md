@@ -73,6 +73,6 @@ LEFT JOIN flags f ON s.Country = f.Country;
 
 🌍 Clean, responsive visuals for executive-level reporting
 
-### Author
+# Author
 
 Namrata Jambhulkar
